@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #007BFF;
+        }
+
+        a.botao-remover {
+            background-color: #dc3545;
+        }
+
+        a.botao-remover:hover {
+            background-color: #c82333;
+        }
+
+        a.botao-cadastro:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Listagem de Produtos</h1>
+
+    <ul>
+        {% for produto in produtos %}
+            <li>
+                {{ produto.nome }} - {{ produto.descricao }} - R$ {{ produto.preco }} - Quantidade: {{ produto.quantidade }}
+                <a href="{% url 'remover_produto' produto.id %}" class="botao-remover">Remover</a>
+            </li>
+        {% empty %}
+            <li>Não há produtos cadastrados.</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{% url 'cadastro' %}" class="botao-cadastro">Cadastrar Novo Produto</a>
+</body>
+</html>

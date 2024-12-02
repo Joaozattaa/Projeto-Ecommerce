@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 20px;
+            color: #333;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            background-color: #007BFF;
+            display: inline-block;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Salveee seja bem-vindo(a)</h1>
+    <h2>Em nosso sistema você poderá cadastrar novos produtos e visualizá-los em uma lista.</h2>
+    <div style="text-align: center;">
+        <a href="{% url 'cadastro' %}">Ir para Cadastro</a>
+    </div>
+</body>
+</html>
